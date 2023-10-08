@@ -1,10 +1,10 @@
-import { test as base } from "../fixtures/mainMenu.spec";
-import { MenuOfPermanentInformations } from "../page-object/elements/menuOfPermanentInformations.spec";
-import { MainMenu } from "../page-object/elements/main-menu/mainMenu.spec";
+import { test as base } from "./mainMenu.spec";
+import { Menu } from "../page-object/elements/menu.spec";
+
 
 type MenuOfPermanentInformationsFixture = {
 
-    menuOfPermanentInformations: MenuOfPermanentInformations
+    menuOfPermanentInformations: Menu
 }
 
 export const test = base.extend<MenuOfPermanentInformationsFixture>({
@@ -13,7 +13,7 @@ export const test = base.extend<MenuOfPermanentInformationsFixture>({
         
         await page.goto('https://wnmp.pl/');
 
-        const menuOfPermanentInformations = new MenuOfPermanentInformations(page);
+        const menuOfPermanentInformations = new Menu(page);
         
         await (await mainMenu.getDropdownList()).hoverParent();
         (await mainMenu.getDropdownList()).clickLink('Porządek Mszy św. i nabożeństw');
