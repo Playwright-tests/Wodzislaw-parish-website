@@ -1,8 +1,8 @@
 import { Page } from "@playwright/test";
 import { BasePage } from "../base/basePage.spec";
-import { link } from "fs";
 
-export class MenuOfPermanentInformations extends BasePage {
+
+export class Menu extends BasePage {
 
     constructor(page: Page) {
 
