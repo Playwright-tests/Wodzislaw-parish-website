@@ -52,14 +52,20 @@ export const mainMenuLinks = [
 export const dropdownListItems = [
 
     {
-        link: 'Porządek Mszy św. i nabożeństw'
+        link: 'Porządek Mszy św. i nabożeństw',
+        pageUrl: 'https://wnmp.pl/informacje-stale/porzadek-mszy-sw-i-nabozenstw/',
+        tabName: 'Porządek Mszy św. i nabożeństw'
     },
 
     {
-        link: 'Sakramenty – zasady udzielania, terminy'
+        link: 'Sakramenty – zasady udzielania, terminy',
+        pageUrl: 'https://wnmp.pl/informacje-stale/sakramenty-zasady-udzielania-terminy/',
+        tabName: 'Sakramenty – zasady udzielania, terminy'
     },
 
     {
-        link: 'Odwiedziny chorych i starszych wiekiem parafian'
+        link: 'Odwiedziny chorych i starszych wiekiem parafian',
+        pageUrl: 'https://wnmp.pl/informacje-stale/odwiedziny-chorych-i-starszych-wiekiem-parafian/',
+        tabName: 'Odwiedziny chorych i starszych wiekiem parafian'
     }
 ]
