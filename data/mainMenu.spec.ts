@@ -48,3 +48,18 @@ export const mainMenuLinks = [
         tabName: 'Kontakt'
     }
 ]
+
+export const dropdownListItems = [
+
+    {
+        link: 'Porządek Mszy św. i nabożeństw'
+    },
+
+    {
+        link: 'Sakramenty – zasady udzielania, terminy'
+    },
+
+    {
+        link: 'Odwiedziny chorych i starszych wiekiem parafian'
+    }
+]
