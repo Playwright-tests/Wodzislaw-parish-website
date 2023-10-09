@@ -27,7 +27,7 @@ export const parishGroupsLinks = [
     {
         link: 'Chór Parafialny "Assumptio"',
         pageUrl: 'https://wnmp.pl/grupy-parafialne/chor-parafialny-assumptio/',
-        tabName: 'Chór Parafialny \"Assumptio\"'
+        tabName: 'Chór Parafialny “Assumptio”'
     },
 
     {
@@ -93,7 +93,7 @@ export const parishGroupsLinks = [
     {
         link: 'Redakcja gazetki "Magnificat"',
         pageUrl: 'https://wnmp.pl/grupy-parafialne/redakcja-gazetki-magnificat/',
-        tabName: 'Redakcja gazetki \"Magnificat\"'
+        tabName: 'Redakcja gazetki “Magnificat”'
     },
 
     {
