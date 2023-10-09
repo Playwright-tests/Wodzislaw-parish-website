@@ -1,9 +1,9 @@
 import { test as base } from "./mainMenu.spec";
-import { ParishGroupsMenu } from "../page-object/elements/parishGroupsMenu.spec";
+import { Menu_2 } from "../page-object/elements/menu_2.spec";
 
 type ParishGroupsMenuFixture = {
 
-    parishGroupsMenu: ParishGroupsMenu
+    parishGroupsMenu: Menu_2
 }
 
 export const test = base.extend<ParishGroupsMenuFixture>({
@@ -12,7 +12,7 @@ export const test = base.extend<ParishGroupsMenuFixture>({
         
         await page.goto('https://wnmp.pl');
 
-        const parishGroupsMenu = new ParishGroupsMenu(page);
+        const parishGroupsMenu = new Menu_2(page);
 
         await mainMenu.clickLink('Grupy parafialne');
         await use(parishGroupsMenu);
