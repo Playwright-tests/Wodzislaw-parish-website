@@ -2,7 +2,7 @@ import { Page } from "@playwright/test";
 import { BasePage } from "../base/basePage.spec";
 
 
-export class Menu extends BasePage {
+export class Menu_1 extends BasePage {
 
     constructor(page: Page) {
 

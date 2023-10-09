@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test";
 import { BasePage } from "../base/basePage.spec";
 
-export class ParishGroupsMenu extends BasePage {
+export class Menu_2 extends BasePage {
 
     constructor(page: Page) {
 
