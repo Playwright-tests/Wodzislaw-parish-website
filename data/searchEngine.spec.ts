@@ -2,7 +2,7 @@ export const correctPhrases = [
 
     'Organy',
     'Chór',
-    'Duszpastzerze',
+    'Duszpasterze',
     'Spowiedź'
 ]
 
