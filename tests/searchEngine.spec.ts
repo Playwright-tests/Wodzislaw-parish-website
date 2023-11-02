@@ -1,15 +1,17 @@
-import { correctPhrases, incorrectPhrases } from "../data/searchEngine.spec";
+import { JSONReader } from "../JSON-reader/JSONReader.spec";
 import { test, expect } from "../fixtures/searchEngine.spec";
+
+const testdata = JSONReader.get();
 
 test.describe('Search engine tests',async () => {
     
-    for(let i = 0; i < correctPhrases.length; i++) {
+    for(let i = 0; i < testdata.correctPhrases.length; i++) {
 
-        test('Typing the "' + correctPhrases[i] + '" as the correct phrase',async ({searchEngine, searchResultsList}) => {
+        test('Typing the "' + testdata.correctPhrases[i] + '" as the correct phrase',async ({searchEngine, searchResultsList}) => {
 
-            await test.step('Type "' + correctPhrases[i] +'" as the correct phrase',async () => {
+            await test.step('Type "' + testdata.correctPhrases[i] +'" as the correct phrase',async () => {
                 
-                await searchEngine.setPhrase(correctPhrases[i]);
+                await searchEngine.setPhrase(testdata.correctPhrases[i]);
             })
 
             await test.step('Click the search button',async () => {
@@ -22,13 +24,13 @@ test.describe('Search engine tests',async () => {
         })
     }
 
-    for(let i = 0; i < incorrectPhrases.length; i++) {
+    for(let i = 0; i < testdata.incorrectPhrases.length; i++) {
 
-        test('Type "' + incorrectPhrases[i] +'" as the correct phrase',async ({searchEngine, searchResultsList}) => {
+        test('Type "' + testdata.incorrectPhrases[i] +'" as the correct phrase',async ({searchEngine, searchResultsList}) => {
             
-            await test.step('Type "' + incorrectPhrases[i] +'" as the correct phrase',async () => {
+            await test.step('Type "' + testdata.incorrectPhrases[i] +'" as the correct phrase',async () => {
                 
-                await searchEngine.setPhrase(incorrectPhrases[i]);
+                await searchEngine.setPhrase(testdata.incorrectPhrases[i]);
             })
 
             await test.step('Click the search button',async () => {
