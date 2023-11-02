@@ -50,7 +50,7 @@
         }
     ],
     
-    "dropdownListItems": [
+    "dropdownList": [
     
         {
             "link": "Porządek Mszy św. i nabożeństw",
@@ -71,7 +71,7 @@
         }
     ],
 
-    "parishGroupsLinks": [
+    "parishGroups": [
 
         {
             "link": "Bractwo Eucharystyczne",
@@ -194,7 +194,7 @@
         }
     ],
 
-    "parishHistoryMenuLinks": [
+    "parishHistory": [
 
         {
             "link": "Z kart historii",
@@ -209,13 +209,13 @@
         }
     ],
 
-    "photoGalleryMenuData": {
+    "photoGallery": {
 
         "partOfLinkText": "Anno Domini ",
         "partOfExpectedUrl": "https://wnmp.pl/media/anno-domini-"
     },
 
-    "priestsMenuLinks": [
+    "priests": [
 
         {
             "link": "Obecni duszpasterze",
