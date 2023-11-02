@@ -1,5 +1,4 @@
 import { test, expect } from "../fixtures/mainMenu.spec";
-import { dropdownListItems, mainMenuLinks } from "../data/mainMenu.spec";
 import { JSONReader } from "../JSON-reader/JSONReader.spec";
 
 const testdata = JSONReader.get();
