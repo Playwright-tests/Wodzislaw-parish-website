@@ -1,6 +1,6 @@
 import { test as base } from "@playwright/test";
 import { MainMenu } from "../page-object/elements/main-menu/mainMenu.spec";
-import { Menu_2 } from "../page-object/elements/menu_2.spec";
+import { Menu } from "../page-object/elements/menu.spec";
 
 export type Url = {
 
@@ -9,7 +9,7 @@ export type Url = {
 
 export type SubpageMenuFixture_1 = {
 
-    menu: Menu_2
+    menu: Menu
 }
 
 export const test = base.extend<Url & SubpageMenuFixture_1>({
@@ -18,7 +18,7 @@ export const test = base.extend<Url & SubpageMenuFixture_1>({
 
     menu:async ({page, url}, use) => {
        
-        const menu = new Menu_2(page);
+        const menu = new Menu(page);
         const mainMenu = new MainMenu(page);
         
         await mainMenu.goto(url);
