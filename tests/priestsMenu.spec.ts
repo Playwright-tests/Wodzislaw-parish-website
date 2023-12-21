@@ -1,23 +1,24 @@
-import { test, expect } from "../fixtures/subpageMenu_2.spec";
-import { JSONReader } from "../JSON-reader/JSONReader.spec";
+import { URLs } from "../enums/URLs.spec";
+import { test, expect } from "../fixtures/subpageMenu.spec";
+import { getLinkData } from "../loaders/linkData.spec";
 
-test.use({ mainMenuLink: 'Duszpasterze' });
+test.use({ url: URLs.PRIESTS });
 
-const testdata = JSONReader.get();
+const linkData = getLinkData('priests');
 
 test.describe('Priests menu links',async () => {
     
-    for(let i = 0; i < testdata.priests.length; i++) {
+    for(const data of linkData) {
 
-        test('Clicking the "' + testdata.priests[i].link + '" link',async ({page, menu}) => {
+        test('Clicking the "' + data.link + '" link',async ({page, menu}) => {
             
-            await test.step('Click the "' + testdata.priests[i] + '" link',async () => {
+            await test.step('Click the "' + data.link + '" link',async () => {
                 
-                await menu.clickLink(testdata.priests[i].link);
+                await menu.clickLink(data.link);
             })
 
-            await expect(page).toHaveURL(testdata.priests[i].pageUrl);
-            await expect(page).toHaveTitle(testdata.priests[i].tabName);
+            await expect(page).toHaveURL(data.pageUrl);
+            await expect(page).toHaveTitle(data.tabName);
         })
     }
 })
