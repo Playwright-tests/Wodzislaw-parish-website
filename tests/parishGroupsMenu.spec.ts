@@ -1,23 +1,24 @@
-import { JSONReader } from "../JSON-reader/JSONReader.spec";
+import { URLs } from "../enums/URLs.spec";
 import { test, expect } from "../fixtures/subpageMenu_1.spec";
+import { getLinkData } from "../loaders/linkData.spec";
 
-test.use({ mainMenuLink: 'Grupy parafialne' });
+test.use({ url: URLs.PARISH_GROUPS });
 
-const testdata = JSONReader.get();
+const linkData = getLinkData('parishGroups');
 
 test.describe('Parish groups menu tests',async () => {
     
-    for(let i = 0; i < testdata.parishGroups.length; i++) {
+    for(const data of linkData) {
 
-        test('Clicking the "' + testdata.parishGroups[i].link + '" link',async ({page, menu}) => {
+        test('Clicking the "' + data.link + '" link',async ({page, menu}) => {
             
-            await test.step('Click the "' + testdata.parishGroups[i].link + '" link',async () => {
+            await test.step('Click the "' + data.link + '" link',async () => {
                 
-                await menu.clickLink(testdata.parishGroups[i].link);
+                await menu.clickLink(data.link);
             })
 
-            await expect(page).toHaveURL(testdata.parishGroups[i].pageUrl);
-            await expect(page).toHaveTitle(testdata.parishGroups[i].tabName);
+            await expect(page).toHaveURL(data.pageUrl);
+            await expect(page).toHaveTitle(data.tabName);
         })
     }
 })
