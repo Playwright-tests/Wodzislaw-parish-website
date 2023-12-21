@@ -1,25 +1,25 @@
-import { JSONReader } from "../JSON-reader/JSONReader.spec";
+import { URLs } from "../enums/URLs.spec";
+import { Years } from "../enums/years.spec";
 import { test, expect } from "../fixtures/subpageMenu_1.spec"
+import { getPhotoGalleryLinkData } from "../loaders/linkData.spec";
 
-test.use({ mainMenuLink: 'Galeria zdjęć' });
+test.use({ url: URLs.PHOTO_GALLERY });
 
-const testdata = JSONReader.get();
+const linkData = getPhotoGalleryLinkData();
 
 test.describe('Photo gallery menu tests',async () => {
-    
-    const beginValue = 2023;
-    const endValue = 2005;
 
-    for(let i = beginValue; i > endValue - 1; i--) {
+    for(let i = Years.BEGIN_YEAR; i > Years.END_YEAR - 1; i--) {
 
-        const linkText = testdata.photoGallery.partOfLinkText + i.toString();
-        const expectedUrl = testdata.photoGallery.partOfExpectedUrl + i.toString() + '/'; 
+        const linkText = linkData.partOfLinkText + i.toString();
+        const expectedUrl = linkData.partOfExpectedUrl + i.toString() + '/'; 
 
         test('Clicking the "' + linkText + '" link',async ({page, menu}) => {
             
             await test.step('Click the "' + linkText + '" link',async () => {
-                
+               
                 await menu.clickLink(linkText);
+
             } )
 
             await expect(page).toHaveURL(expectedUrl);
