@@ -1,40 +1,44 @@
 import { test, expect } from "../fixtures/mainMenu.spec";
-import { JSONReader } from "../JSON-reader/JSONReader.spec";
+import { getLinkData } from "../loaders/linkData.spec";
 
-const testdata = JSONReader.get();
+const links = getLinkData('mainMenu');
+const dropdownList = getLinkData('dropdownList');
 
-test.describe('Main menu tests', async () => {
+test.describe('Main menu links',async () => {
     
-    for(let i = 0; i < testdata.mainMenu.length; i++) {
+    for(const data of links) {
 
-        test('Clicking the "' + testdata.mainMenu[i].link + '" link',async ({page, mainMenu}) => {
+        test('Clicking the "' + data.link + '" link',async ({mainMenu, page}) => {
             
-            await test.step('Click the "' + testdata.mainMenu[i].link + '" link',async () => {
+            await test.step('Click the "' + data.link + '" link',async () => {
                 
-                await mainMenu.clickLink(testdata.mainMenu[i].link);
+                await mainMenu.clickLink(data.link);
             })
 
-            await expect(page).toHaveURL(testdata.mainMenu[i].pageUrl);
-            await expect(page).toHaveTitle(testdata.mainMenu[i].tabName);
+            await expect(page).toHaveURL(data.pageUrl);
+            await expect(page).toHaveTitle(data.tabName); 
         })
-    }
+    }   
+})
 
-    for(let i = 0; i < testdata.dropdownList.length; i++) {
+test.describe('Main menu dropdown list',async () => {
+    
+    for(const data of dropdownList) {
 
-        test('Clicking the "' + testdata.dropdownList[i].link + '" link of the drop-down list',async ({page, mainMenu}) => {
+        test('Clicking the "' + data.link + '" link of the drop-down list',async ({mainMenu, page}) => {
             
             await test.step('Hover over the "Informacje stałe"',async () => {
                 
                 await (await mainMenu.getDropdownList()).hoverParent();
             })
 
-            await test.step('Click the "' + testdata.dropdownList[i].link + '" link',async () => {
+            await test.step('Click the "' + data.link + '" link',async () => {
                 
-                await (await mainMenu.getDropdownList()).clickLink(testdata.dropdownList[i].link);
+                await (await mainMenu.getDropdownList()).clickLink(data.link);
             })
 
-            await expect(page).toHaveURL(testdata.dropdownList[i].pageUrl);
-            await expect(page).toHaveTitle(testdata.dropdownList[i].tabName);
+            await expect(page).toHaveURL(data.pageUrl);
+            await expect(page).toHaveTitle(data.tabName);
         })
     }
 })
