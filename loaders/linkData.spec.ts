@@ -20,3 +20,14 @@ export function getLinkData(node: string) {
 
     return linkData;
 }
+
+export function getPhotoGalleryLinkData() {
+
+    let linkData: { partOfLinkText: string, partOfExpectedUrl: string } = {
+
+        partOfLinkText: 'Anno Domini ',
+        partOfExpectedUrl: 'https://wnmp.pl/media/anno-domini-'
+    }
+    
+    return linkData;
+}
