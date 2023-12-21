@@ -253,7 +253,7 @@
 
     "searchEngine": {
 
-        "correctPhrases": [
+        "correct": [
 
             "Organy",
             "Chór",
@@ -261,7 +261,7 @@
             "Spowiedź"
         ],
         
-        "incorrectPhrases": [
+        "incorrect": [
         
             "dW5kZWZpbmVk",
             "OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5",
