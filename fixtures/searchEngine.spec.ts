@@ -1,6 +1,7 @@
-import { test as base } from "./subpageMenu_2.spec";
+import { test as base } from "@playwright/test";
 import { SearchEngine } from "../page-object/elements/searchEngine.spec";
 import { SearchResultsList } from "../page-object/elements/searchResultsList.spec";
+import { URLs } from "../enums/URLs.spec";
 
 type SearchEngineFixture = {
 
@@ -12,19 +13,17 @@ export const test = base.extend<SearchEngineFixture>({
 
     searchEngine:async ({page}, use) => {
         
-        await page.goto('https://wnmp.pl/');
-
         const searchEngine = new SearchEngine(page);
 
+        await searchEngine.goto(URLs.HOME_PAGE);
         await use(searchEngine);
     },
 
     searchResultsList:async ({page}, use) => {
         
-        await page.goto('https://wnmp.pl/');
-
         const searchResultsList = new SearchResultsList(page);
 
+        await searchResultsList.goto(URLs.HOME_PAGE)
         await use(searchResultsList);
     }
 })
