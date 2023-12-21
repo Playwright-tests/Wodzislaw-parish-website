@@ -1,3 +1,4 @@
+import { linkClickingAssertions } from "../common/assertions.spec";
 import { URLs } from "../enums/URLs.spec";
 import { test, expect } from "../fixtures/subpageMenu.spec";
 import { getLinkData } from "../loaders/linkData.spec";
@@ -17,8 +18,7 @@ test.describe('Priests menu links',async () => {
                 await menu.clickLink(data.link);
             })
 
-            await expect(page).toHaveURL(data.pageUrl);
-            await expect(page).toHaveTitle(data.tabName);
+            await linkClickingAssertions(page, data.pageUrl, data.tabName);
         })
     }
 })

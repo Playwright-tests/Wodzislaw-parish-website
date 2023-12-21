@@ -1,4 +1,5 @@
-import { test, expect } from "../fixtures/mainMenu.spec";
+import { linkClickingAssertions } from "../common/assertions.spec";
+import { test } from "../fixtures/mainMenu.spec";
 import { getLinkData } from "../loaders/linkData.spec";
 
 const links = getLinkData('mainMenu');
@@ -15,8 +16,7 @@ test.describe('Main menu links',async () => {
                 await mainMenu.clickLink(data.link);
             })
 
-            await expect(page).toHaveURL(data.pageUrl);
-            await expect(page).toHaveTitle(data.tabName); 
+            await linkClickingAssertions(page, data.pageUrl, data.tabName);
         })
     }   
 })
@@ -37,8 +37,7 @@ test.describe('Main menu dropdown list',async () => {
                 await (await mainMenu.getDropdownList()).clickLink(data.link);
             })
 
-            await expect(page).toHaveURL(data.pageUrl);
-            await expect(page).toHaveTitle(data.tabName);
+            await linkClickingAssertions(page, data.pageUrl, data.tabName);
         })
     }
 })

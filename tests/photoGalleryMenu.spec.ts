@@ -1,6 +1,7 @@
+import { linkClickingAssertions } from "../common/assertions.spec";
 import { URLs } from "../enums/URLs.spec";
 import { Years } from "../enums/years.spec";
-import { test, expect } from "../fixtures/subpageMenu.spec"
+import { test } from "../fixtures/subpageMenu.spec"
 import { getPhotoGalleryLinkData } from "../loaders/linkData.spec";
 
 test.use({ url: URLs.PHOTO_GALLERY });
@@ -22,8 +23,7 @@ test.describe('Photo gallery menu tests',async () => {
 
             } )
 
-            await expect(page).toHaveURL(expectedUrl);
-            await expect(page).toHaveTitle(linkText);
+            await linkClickingAssertions(page, expectedUrl, linkText);
         })
     }
 
