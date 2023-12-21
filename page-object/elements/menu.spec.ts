@@ -1,8 +1,7 @@
 import { Page } from "@playwright/test";
 import { BasePage } from "../base/basePage.spec";
 
-
-export class Menu_1 extends BasePage {
+export class Menu extends BasePage {
 
     constructor(page: Page) {
 
@@ -11,6 +10,6 @@ export class Menu_1 extends BasePage {
 
     async clickLink(linkText: string) {
 
-        await this.page.getByRole('link', {name: linkText, exact: true}).click();
+        await this.page.locator('#site-aside').getByRole('link', {name: linkText}).click();
     }
 }
