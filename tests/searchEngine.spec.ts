@@ -1,42 +1,31 @@
-import { JSONReader } from "../JSON-reader/JSONReader.spec";
+import { searchEngineSteps } from "../common/steps.spec";
 import { test, expect } from "../fixtures/searchEngine.spec";
+import { getPhrases } from "../loaders/phrases.spec";
 
-const testdata = JSONReader.get();
+const correctPhrases = getPhrases('correct');
+const incorrectPhrases = getPhrases('incorrect');
 
-test.describe('Search engine tests',async () => {
+test.describe('Correct phrase',async () => {
     
-    for(let i = 0; i < testdata.correctPhrases.length; i++) {
+    for(const data of correctPhrases) {
 
-        test('Typing the "' + testdata.correctPhrases[i] + '" as the correct phrase',async ({searchEngine, searchResultsList}) => {
+        test('Typing the "' + data + '" as the correct phrase',async ({searchEngine, searchResultsList}) => {
 
-            await test.step('Type "' + testdata.correctPhrases[i] +'" as the correct phrase',async () => {
-                
-                await searchEngine.setPhrase(testdata.correctPhrases[i]);
-            })
-
-            await test.step('Click the search button',async () => {
-                
-                await searchEngine.clickButton();
-            })
+            await searchEngineSteps(searchEngine, data);
 
             expect(await searchResultsList.isParentVisible()).toBeTruthy();
             expect(await searchResultsList.isMessageVisible()).toBeFalsy();
         })
     }
+})
 
-    for(let i = 0; i < testdata.incorrectPhrases.length; i++) {
+test.describe('Incorrect phrase',async () => {
+    
+    for(const data of incorrectPhrases) {
 
-        test('Type "' + testdata.incorrectPhrases[i] +'" as the correct phrase',async ({searchEngine, searchResultsList}) => {
-            
-            await test.step('Type "' + testdata.incorrectPhrases[i] +'" as the correct phrase',async () => {
-                
-                await searchEngine.setPhrase(testdata.incorrectPhrases[i]);
-            })
+        test('Typing the "' + data + '" as the incorrect phrase',async ({searchEngine, searchResultsList}) => {
 
-            await test.step('Click the search button',async () => {
-                
-                await searchEngine.clickButton();
-            })
+            await searchEngineSteps(searchEngine, data);
 
             expect(await searchResultsList.isParentVisible()).toBeFalsy();
             expect(await searchResultsList.isMessageVisible()).toBeTruthy();
