@@ -1,5 +1,5 @@
 import { URLs } from "../enums/URLs.spec";
-import { test, expect } from "../fixtures/subpageMenu_1.spec";
+import { test, expect } from "../fixtures/subpageMenu.spec";
 import { getLinkData } from "../loaders/linkData.spec";
 
 test.use({ url: URLs.PARISH_GROUPS });
