@@ -2,7 +2,8 @@ version: 2.1
 
 jobs:
   run-test:
-    docker: image: mcr.microsoft.com/playwright:v1.23.1-focal
+    docker: 
+      - image: mcr.microsoft.com/playwright:v1.23.1-focal
     steps:
       - checkout
       - run: npm i -D @playwright/test
