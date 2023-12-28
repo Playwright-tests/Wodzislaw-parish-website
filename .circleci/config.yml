@@ -1,20 +1,17 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@4.7
-
+jobs:
+  run-test:
+    docker: image: mcr.microsoft.com/playwright:v1.23.1-focal
+    steps:
+      - checkout
+      - run: npm i -D @playwright/test
+      - run: npx playwright install
+      - run: npx playwright install chrome
+      - run:
+          name: Run test
+          command: npm run test
 workflows:
-  sample:
+  run-test-workflow:
     jobs:
-      - node/test:
-          version: '16.10'
-          pkg-manager: npm
-          steps:
-            - run:
-                name: Install Chromium for Playwright
-                command: |
-                  npm install -g playwright
-                  npx playwright install chromium
-            - run:
-                name: Run tests with Playwright
-                command: npm run test
+      - run-test
