@@ -19,3 +19,12 @@ workflows:
           version: '16.10'
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
+          steps:
+            - run:
+                name: Install Chromium for Playwright
+                command: |
+                  npm install -g playwright
+                  npx playwright install chromium
+            - run:
+                name: Run tests with Playwright
+                command: npm run test
