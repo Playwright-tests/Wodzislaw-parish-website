@@ -12,6 +12,8 @@ jobs:
       - run:
           name: Run test
           command: npm run test
+      - store_test_results:
+          path: results.xml
 workflows:
   run-test-workflow:
     jobs:
