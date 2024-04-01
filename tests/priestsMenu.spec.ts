@@ -1,24 +1,24 @@
-import { linkClickingAssertions } from "../common/assertions.spec";
-import { URLs } from "../enums/URLs.spec";
-import { test, expect } from "../fixtures/subpageMenu.spec";
-import { getLinkData } from "../loaders/linkData.spec";
+import { linkClickingAssertions } from "../common/assertions";
+import { URLs } from "../enums/URLs";
+import { test, expect } from "../fixtures/subpageMenu";
+import { getLinkTypes } from "../loaders/loaders";
 
 test.use({ url: URLs.PRIESTS });
 
-const linkData = getLinkData('priests');
+const links = getLinkTypes('priests');
 
 test.describe('Priests menu links',async () => {
     
-    for(const data of linkData) {
+    for(const link of links) {
 
-        test('Clicking the "' + data.link + '" link',async ({page, menu}) => {
+        test('Clicking the "' + link.link + '" link',async ({page, menu}) => {
             
-            await test.step('Click the "' + data.link + '" link',async () => {
+            await test.step('Click the "' + link.link + '" link',async () => {
                 
-                await menu.clickLink(data.link);
+                await menu.clickLink(link.link);
             })
 
-            await linkClickingAssertions(page, data.pageUrl, data.tabName);
+            await linkClickingAssertions(page, link.pageUrl, link.tabName);
         })
     }
 })
