@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { SearchEngine } from "../page-object/elements/searchEngine.spec";
+import { SearchEngine } from "../page-object/elements/searchEngine.";
 
 export async function searchEngineSteps(searchEngine: SearchEngine, data: any) {
     

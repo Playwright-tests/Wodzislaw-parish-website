@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { BasePage } from "../base/basePage.spec";
+import { BasePage } from "../base/basePage";
 
 export class Menu extends BasePage {
 

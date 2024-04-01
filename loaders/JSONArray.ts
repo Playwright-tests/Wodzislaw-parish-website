@@ -1,4 +1,4 @@
-import { JSONReader } from "../JSON-reader/JSONReader.spec";
+import { JSONReader } from "../JSON-reader/JSONReader";
 
 export function getJSONArray(key: string) {
 

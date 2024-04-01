@@ -1,4 +1,4 @@
-import { getJSONArray } from "./JSONArray.spec"
+import { getJSONArray } from "./JSONArray"
 
 export function getPhrases(node: string) {
 

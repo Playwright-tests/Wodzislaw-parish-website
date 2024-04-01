@@ -1,6 +1,6 @@
 import { test as base } from "@playwright/test";
-import { MainMenu } from "../page-object/elements/main-menu/mainMenu.spec";
-import { Menu } from "../page-object/elements/menu.spec";
+import { MainMenu } from "../page-object/elements/main-menu/mainMenu.";
+import { Menu } from "../page-object/elements/menu.";
 
 export type Url = {
 

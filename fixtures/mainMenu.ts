@@ -1,6 +1,6 @@
 import { test as base } from "@playwright/test";
-import { MainMenu } from "../page-object/elements/main-menu/mainMenu.spec";
-import { URLs } from "../enums/URLs.spec";
+import { MainMenu } from "../page-object/elements/main-menu/mainMenu.";
+import { URLs } from "../enums/URLs";
 
 type MainMenuFixture = {
 

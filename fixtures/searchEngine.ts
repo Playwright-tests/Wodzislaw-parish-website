@@ -1,7 +1,7 @@
 import { test as base } from "@playwright/test";
-import { SearchEngine } from "../page-object/elements/searchEngine.spec";
-import { SearchResultsList } from "../page-object/elements/searchResultsList.spec";
-import { URLs } from "../enums/URLs.spec";
+import { SearchEngine } from "../page-object/elements/searchEngine.";
+import { SearchResultsList } from "../page-object/elements/searchResultsList";
+import { URLs } from "../enums/URLs";
 
 type SearchEngineFixture = {
 

@@ -1,6 +1,6 @@
-import { URLs } from "../enums/URLs.spec";
-import { test as base } from "../fixtures/mainMenu.spec";
-import { Menu } from "../page-object/elements/menu.spec";
+import { URLs } from "../enums/URLs";
+import { test as base } from "../fixtures/mainMenu";
+import { Menu } from "../page-object/elements/menu.";
 
 type PriestsMenuFixture = {
 

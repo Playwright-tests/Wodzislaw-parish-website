@@ -1,5 +1,5 @@
-import { JSONReader } from "../JSON-reader/JSONReader.spec";
-import { getJSONArray } from "./JSONArray.spec";
+import { JSONReader } from "../JSON-reader/JSONReader";
+import { getJSONArray } from "./JSONArray";
 
 export function getLinkData(node: string) {
 
