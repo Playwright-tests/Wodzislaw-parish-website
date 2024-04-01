@@ -1,43 +1,21 @@
-import { linkClickingAssertions } from "../common/assertions.spec";
-import { test } from "../fixtures/mainMenu.spec";
-import { getLinkData } from "../loaders/linkData.spec";
+import { linkClickingAssertions } from "../common/assertions";
+import { test } from "../fixtures/mainMenu";
+import { getLinkTypes } from "../loaders/loaders";
 
-const links = getLinkData('mainMenu');
-const dropdownList = getLinkData('dropdownList');
+const links = getLinkTypes('mainMenu');
 
 test.describe('Main menu links',async () => {
     
-    for(const data of links) {
+    for(const link of links) {
 
-        test('Clicking the "' + data.link + '" link',async ({mainMenu, page}) => {
+        test('Clicking the "' + link.link + '" link',async ({mainMenu, page}) => {
             
-            await test.step('Click the "' + data.link + '" link',async () => {
+            await test.step('Click the "' + link.link + '" link',async () => {
                 
-                await mainMenu.clickLink(data.link);
+                await mainMenu.clickLink(link.link);
             })
 
-            await linkClickingAssertions(page, data.pageUrl, data.tabName);
+            await linkClickingAssertions(page, link.pageUrl, link.tabName);
         })
     }   
-})
-
-test.describe('Main menu dropdown list',async () => {
-    
-    for(const data of dropdownList) {
-
-        test('Clicking the "' + data.link + '" link of the drop-down list',async ({mainMenu, page}) => {
-            
-            await test.step('Hover over the "Informacje stałe"',async () => {
-                
-                await (await mainMenu.getDropdownList()).hoverParent();
-            })
-
-            await test.step('Click the "' + data.link + '" link',async () => {
-                
-                await (await mainMenu.getDropdownList()).clickLink(data.link);
-            })
-
-            await linkClickingAssertions(page, data.pageUrl, data.tabName);
-        })
-    }
 })
