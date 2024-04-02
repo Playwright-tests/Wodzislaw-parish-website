@@ -2,14 +2,11 @@ import { URLs } from "../enums/URLs";
 import { test as base } from "../fixtures/mainMenu";
 import { Menu } from "../page-object/elements/menu.";
 
-type PriestsMenuFixture = {
+export { expect } from "@playwright/test";
 
-    priestsMenu: Menu
-}
+export const test = base.extend<{menu: Menu}>({
 
-export const test = base.extend<PriestsMenuFixture>({
-
-    priestsMenu:async ({page, mainMenu}, use) => {
+    menu:async ({page, mainMenu}, use) => {
         
         const priestsMenu = new Menu(page);
 
@@ -18,5 +15,3 @@ export const test = base.extend<PriestsMenuFixture>({
         await use(priestsMenu);
     }
 })
-
-export { expect } from "@playwright/test";

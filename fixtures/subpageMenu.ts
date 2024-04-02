@@ -2,17 +2,9 @@ import { test as base } from "@playwright/test";
 import { MainMenu } from "../page-object/elements/main-menu/mainMenu.";
 import { Menu } from "../page-object/elements/menu.";
 
-export type Url = {
+export { expect } from "@playwright/test";
 
-    url: string;
-};
-
-export type SubpageMenuFixture_1 = {
-
-    menu: Menu
-}
-
-export const test = base.extend<Url & SubpageMenuFixture_1>({
+export const test = base.extend<{url: string} & {menu: Menu}>({
 
     url: ['Default url', {option: true}],
 
@@ -25,8 +17,6 @@ export const test = base.extend<Url & SubpageMenuFixture_1>({
         await use(menu);
     }
 })
-
-export { expect } from "@playwright/test";
 
 
 

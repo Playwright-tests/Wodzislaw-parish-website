@@ -2,12 +2,9 @@ import { test as base } from "@playwright/test";
 import { MainMenu } from "../page-object/elements/main-menu/mainMenu.";
 import { URLs } from "../enums/URLs";
 
-type MainMenuFixture = {
+export { expect } from "@playwright/test";
 
-    mainMenu: MainMenu
-}
-
-export const test = base.extend<MainMenuFixture>({
+export const test = base.extend<{mainMenu: MainMenu}>({
 
     mainMenu:async ({page}, use) => {
 
@@ -17,5 +14,3 @@ export const test = base.extend<MainMenuFixture>({
         await use(mainMenu);
     }
 })
-
-export { expect } from "@playwright/test";
