@@ -1,4 +1,4 @@
-import { linkClickingAssertions } from "../common/assertions";
+import { redirectionLinkAssertion } from "../common/assertions";
 import { URLs } from "../enums/URLs";
 import { Years } from "../enums/years";
 import { test } from "../fixtures/subpageMenu"
@@ -23,7 +23,7 @@ test.describe('Photo gallery menu tests',async () => {
 
             } )
 
-            await linkClickingAssertions(page, expectedUrl, linkText);
+            await redirectionLinkAssertion(page, expectedUrl, linkText);
         })
     }
 

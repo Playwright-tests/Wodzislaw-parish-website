@@ -1,4 +1,4 @@
-import { linkClickingAssertions } from "../common/assertions";
+import { redirectionLinkAssertion } from "../common/assertions";
 import { URLs } from "../enums/URLs";
 import { test, expect } from "../fixtures/subpageMenu";
 import { getLinkTypes } from "../loaders/loaders";
@@ -18,7 +18,7 @@ test.describe('Priests menu links',async () => {
                 await menu.clickLink(link.link);
             })
 
-            await linkClickingAssertions(page, link.pageUrl, link.tabName);
+            await redirectionLinkAssertion(page, link.pageUrl, link.tabName);
         })
     }
 })
