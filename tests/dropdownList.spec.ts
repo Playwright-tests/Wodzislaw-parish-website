@@ -1,4 +1,4 @@
-import { linkClickingAssertions } from "../common/assertions";
+import { redirectionLinkAssertion } from "../common/assertions";
 import { test } from "../fixtures/mainMenu";
 import { getLinkTypes } from "../loaders/loaders";
 
@@ -20,7 +20,7 @@ test.describe('Main menu dropdown list',async () => {
                 await (await mainMenu.getDropdownList()).clickLink(link.link);
             })
 
-            await linkClickingAssertions(page, link.pageUrl, link.tabName);
+            await redirectionLinkAssertion(page, link.pageUrl, link.tabName);
         })
     }
 })
