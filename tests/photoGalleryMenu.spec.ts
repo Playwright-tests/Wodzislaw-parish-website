@@ -1,19 +1,19 @@
-import { linkClickingAssertions } from "../common/assertions.spec";
-import { URLs } from "../enums/URLs.spec";
-import { Years } from "../enums/years.spec";
-import { test } from "../fixtures/subpageMenu.spec"
-import { getPhotoGalleryLinkData } from "../loaders/linkData.spec";
+import { linkClickingAssertions } from "../common/assertions";
+import { URLs } from "../enums/URLs";
+import { Years } from "../enums/years";
+import { test } from "../fixtures/subpageMenu"
+import { getPhotoGalleryData } from "../loaders/loaders";
 
 test.use({ url: URLs.PHOTO_GALLERY });
 
-const linkData = getPhotoGalleryLinkData();
+const linkData = getPhotoGalleryData();
 
 test.describe('Photo gallery menu tests',async () => {
 
     for(let i = Years.BEGIN_YEAR; i > Years.END_YEAR - 1; i--) {
 
-        const linkText = linkData.partOfLinkText + i.toString();
-        const expectedUrl = linkData.partOfExpectedUrl + i.toString() + '/'; 
+        const linkText = linkData.partialLinkText + i.toString();
+        const expectedUrl = linkData.partialUrl + i.toString() + '/'; 
 
         test('Clicking the "' + linkText + '" link',async ({page, menu}) => {
             
