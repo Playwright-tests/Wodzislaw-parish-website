@@ -1,9 +1,9 @@
-import { searchEngineSteps } from "../common/steps.spec";
-import { test, expect } from "../fixtures/searchEngine.spec";
-import { getPhrases } from "../loaders/phrases.spec";
+import { searchEngineSteps } from "../common/steps";
+import { test, expect } from "../fixtures/searchEngine";
+import { getStringArray } from "../loaders/loaders";
 
-const correctPhrases = getPhrases('correct');
-const incorrectPhrases = getPhrases('incorrect');
+const correctPhrases = getStringArray('correct');
+const incorrectPhrases = getStringArray('incorrect');
 
 test.describe('Correct phrase',async () => {
     
