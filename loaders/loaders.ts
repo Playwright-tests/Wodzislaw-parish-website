@@ -13,3 +13,9 @@ export function getPhotoGalleryData(): PhotoGalleryData {
     const temp = JSONReader.get(TestdataFileNames.PHOTO_GALLERY);
     return temp['photoGallery'];
 }
+
+export function getStringArray(key: string): string[] {
+
+    const temp = JSONReader.get(TestdataFileNames.PHRASES);
+    return temp[key];
+}
