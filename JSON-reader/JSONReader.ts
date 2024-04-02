@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 export class JSONReader {
 
@@ -6,9 +6,9 @@ export class JSONReader {
 
     constructor() { }
 
-    public static get() {
+    public static get(fileName: string) {
 
-        this.testdata = JSON.parse(JSON.stringify(require('../testdata/testdata.json')));
+        this.testdata = JSON.parse(JSON.stringify(require('../testdata/' + fileName)));
 
         return this.testdata;
     }
