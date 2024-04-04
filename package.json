@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install-playwright": "npm install -g playwright && npx playwright install chromium",
     "test": "npx playwright test -g 'Main menu links'"
   },
   "keywords": [],
@@ -11,9 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.38.1",
-    "@types/node": "^20.8.3"
+    "@types/node": "^20.8.3",
+    "allure-commandline": "^2.27.0",
+    "allure-playwright": "^2.15.0"
   },
-
   "dependencies": {
     "playwright-qase-reporter": "^1.2.1"
   }
