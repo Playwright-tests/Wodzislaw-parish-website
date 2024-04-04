@@ -1,17 +1,22 @@
 import { test, expect } from "../../fixtures/searchEngine";
+import { Severity } from "allure-js-commons";
 import { searchEngineSteps } from "../../common/steps";
 import { getStringArray } from "../../loaders/loaders";
+import { configureAllureTest } from "../../common/allure";
+import { allure } from "allure-playwright";
 
 const correctPhrases = getStringArray('correct');
 const incorrectPhrases = getStringArray('incorrect');
 
 test.describe('Correct phrase',async () => {
     
-    for(const data of correctPhrases) {
+    for(const phrase of correctPhrases) {
 
-        test('Typing the "' + data + '" as the correct phrase',async ({searchEngine, searchResultsList}) => {
+        test('Typing the "' + phrase + '" as the correct phrase',async ({searchEngine, searchResultsList}) => {
 
-            await searchEngineSteps(searchEngine, data);
+            await configureAllureTest('Typing the "' + phrase + '" link', Severity.CRITICAL);
+            await allure.parameter('Phrase', phrase);
+            await searchEngineSteps(searchEngine, phrase);
 
             expect(await searchResultsList.isParentVisible()).toBeTruthy();
             expect(await searchResultsList.isMessageVisible()).toBeFalsy();
@@ -21,11 +26,13 @@ test.describe('Correct phrase',async () => {
 
 test.describe('Incorrect phrase',async () => {
     
-    for(const data of incorrectPhrases) {
+    for(const phrase of incorrectPhrases) {
 
-        test('Typing the "' + data + '" as the incorrect phrase',async ({searchEngine, searchResultsList}) => {
+        test('Typing the "' + phrase + '" as the incorrect phrase',async ({searchEngine, searchResultsList}) => {
 
-            await searchEngineSteps(searchEngine, data);
+            await configureAllureTest('Typing the "' + phrase + '" link', Severity.NORMAL);
+            await allure.parameter('Phrase', phrase);
+            await searchEngineSteps(searchEngine, phrase);
 
             expect(await searchResultsList.isParentVisible()).toBeFalsy();
             expect(await searchResultsList.isMessageVisible()).toBeTruthy();

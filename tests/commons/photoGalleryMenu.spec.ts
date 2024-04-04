@@ -1,9 +1,11 @@
 import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 import { redirectionLinkAssertion } from "../../common/assertions";
 import { URLs } from "../../enums/URLs";
 import { Years } from "../../enums/years";
 import { test } from "../../fixtures/subpageMenu"
 import { getPhotoGalleryData } from "../../loaders/loaders";
+import { configureAllureTest } from "../../common/allure";
 
 test.use({ url: URLs.PHOTO_GALLERY });
 
@@ -18,6 +20,7 @@ test.describe('Photo gallery menu tests',async () => {
 
         test('Clicking the "' + linkText + '" link',async ({menu}) => {
            
+            await configureAllureTest('Clicking the "' + linkText + '" link', Severity.CRITICAL);
             await allure.parameter('link', linkText);
             await allure.parameter('expected page URL', expectedUrl);
 

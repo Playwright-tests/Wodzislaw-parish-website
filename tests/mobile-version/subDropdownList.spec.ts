@@ -3,13 +3,17 @@ import { expect as VS_expect } from "../../custom-expect/toHaveVisibleSelector";
 import { expect as HD_expect } from "../../custom-expect/toHaveHiddenSelector";
 import { getLinkTypes } from "../../loaders/loaders";
 import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
+import { configureAllureTest, setAllureParameters } from "../../common/allure";
 
 const links = getLinkTypes('dropdownList');
 
 test.describe('Sub dropdown list',async () => {
     
-    test('Expanding and collapsing the sub dropdown list',async ({subDropdownList}) => {
+    test('Expanding and collapsing the "INFORMACJE STAŁE" dropdown list',async ({subDropdownList}) => {
         
+        await configureAllureTest('Expanding and collapsing the "INFORMACJE STAŁE" dropdown list', Severity.CRITICAL)
+
         await allure.step('Touch the arrow',async () => {
             await subDropdownList.touchArrow();
         })
@@ -27,9 +31,8 @@ test.describe('Sub dropdown list',async () => {
 
         test('Touching the "' + link.link + '" menu item',async ({expanded}) => {
             
-            await allure.parameter('link', link.link);
-            await allure.parameter('expected page URL', link.pageUrl);
-            await allure.parameter('expected tab name', link.tabName);
+            await configureAllureTest('Touching the "' + link.link + '" link', Severity.CRITICAL);
+            await setAllureParameters(link);
 
             await allure.step('Touch the "' + link.link + '" item',async () => {
                 await expanded.touchItem(link.link);

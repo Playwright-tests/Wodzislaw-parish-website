@@ -1,8 +1,10 @@
 import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 import { redirectionLinkAssertion } from "../../common/assertions";
 import { URLs } from "../../enums/URLs";
 import { test } from "../../fixtures/subpageMenu";
 import { getLinkTypes } from "../../loaders/loaders";
+import { configureAllureTest, setAllureParameters } from "../../common/allure";
 
 test.use({ url: URLs.PARISH_GROUPS });
 
@@ -14,9 +16,8 @@ test.describe('Parish groups menu tests',async () => {
 
         test('Clicking the "' + link.link + '" link',async ({menu}) => {
 
-            await allure.parameter('link', link.link);
-            await allure.parameter('expected page URL', link.pageUrl);
-            await allure.parameter('expected tab name', link.tabName);
+            await configureAllureTest('Clicking the "' + link.link + '" link', Severity.CRITICAL);
+            await setAllureParameters(link);
 
             await allure.step('Click the "' + link.link + '" link',async () => {
                 

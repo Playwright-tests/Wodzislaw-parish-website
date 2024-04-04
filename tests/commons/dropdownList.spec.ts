@@ -1,7 +1,9 @@
 import { redirectionLinkAssertion } from "../../common/assertions";
 import { test } from "../../fixtures/mainMenu";
 import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 import { getLinkTypes } from "../../loaders/loaders";
+import { configureAllureTest, setAllureParameters } from "../../common/allure";
 
 const links = getLinkTypes('dropdownList');
 
@@ -11,9 +13,8 @@ test.describe('Main menu dropdown list',async () => {
 
         test('Clicking the "' + link.link + '" link of the drop-down list',async ({mainMenu, page}) => {
             
-            await allure.parameter('link', link.link);
-            await allure.parameter('expected page URL', link.pageUrl);
-            await allure.parameter('expected tab name', link.tabName);
+            await configureAllureTest('Clicking the "' + link.link + '" link', Severity.CRITICAL);
+            await setAllureParameters(link);
 
             await allure.step('Hover over the "Informacje stałe"',async () => {
                 
