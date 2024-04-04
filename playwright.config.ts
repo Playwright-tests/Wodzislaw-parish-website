@@ -20,7 +20,7 @@ export default defineConfig({
   retries: 2,
   //retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ["line"], 
@@ -30,10 +30,21 @@ export default defineConfig({
           detail: true,
           suiteTitle: false,
           environmentInfo: {
-              os_platform: os.platform(),
-              os_release: os.release(),
-              os_version: os.version(),
-              node_version: process.version,
+              'Machine': os.machine(),
+              'System platform': os.platform(),
+              'Platform release': os.release(),
+              'Platform version': os.version(),
+              'CPU model': os.cpus().at(0)?.model,
+              'CPU speed': os.cpus().at(0)?.speed,
+              'CPU idle': os.cpus().at(0)?.times.idle,
+              'CPU irq': os.cpus().at(0)?.times.irq,
+              'CPU nice': os.cpus().at(0)?.times.nice,
+              'CPU sys': os.cpus().at(0)?.times.sys,
+              'CPU user': os.cpus().at(0)?.times.user,
+              'Arch': os.arch(),
+              'Total memory': os.totalmem(),
+              'Free memory': os.freemem(),
+              'Node version': process.version
           } 
       }
     ]
@@ -63,12 +74,12 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    /*{
+    {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
 
-    {
+    /*{
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },*/
