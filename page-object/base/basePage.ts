@@ -3,7 +3,7 @@ import { test, expect, Page } from '@playwright/test';
 
 export class BasePage {
 
-    readonly page: Page;
+    private readonly page: Page;
 
     constructor(page: Page) {
 
@@ -13,6 +13,11 @@ export class BasePage {
     async goto(url: string) {
 
         await this.page.goto(url);
+    }
+
+    getPage() {
+
+        return this.page;
     }
 
     async getUrl() {
