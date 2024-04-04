@@ -1,11 +1,11 @@
 import { test as base } from "@playwright/test";
 import { MainMenu } from "../page-object/elements/main-menu/mainMenu.";
 import { URLs } from "../enums/URLs";
-import { MainMenuMobileMobileVersion } from "../page-object/elements/main-menu-mobile/mainMenuMobileMobileVersion";
+import { MainMenuMobileVersion } from "../page-object/elements/main-menu-mobile-version/mainMenuMobileMobileVersion";
 
 export { expect } from "@playwright/test";
 
-export const test = base.extend<{mainMenu: MainMenu} & {mainMenuMobileVersion: MainMenuMobileMobileVersion} &
+export const test = base.extend<{mainMenu: MainMenu} & {mainMenuMobileVersion: MainMenuMobileVersion} &
                                 {isExpanded: boolean}>({
 
     isExpanded: [false, {option: true}],
@@ -20,7 +20,7 @@ export const test = base.extend<{mainMenu: MainMenu} & {mainMenuMobileVersion: M
 
     mainMenuMobileVersion:async ({page, isExpanded}, use) => {
         
-        const mainMenuMobileVersion = new MainMenuMobileMobileVersion(page);
+        const mainMenuMobileVersion = new MainMenuMobileVersion(page);
         await mainMenuMobileVersion.goto(URLs.HOME_PAGE);
 
         if(isExpanded) {
