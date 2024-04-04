@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import { BasePage } from "../../base/basePage";
 import { DropdownList } from "./dropdownList";
 
@@ -18,7 +18,12 @@ export class MainMenu extends BasePage {
         await this.getPage().getByRole('link', {name: linkText}).click();
     }
 
-    async getDropdownList() {
+    getLinkLocator(linkText: string): Locator {
+
+        return this.getPage().getByRole('link', {name: linkText});
+    }
+
+    getDropdownList(): DropdownList {
 
         return this.dropdownList;
     }
