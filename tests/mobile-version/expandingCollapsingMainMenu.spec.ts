@@ -1,6 +1,6 @@
-import { test, expect } from "../fixtures/mainMenu";
+import { test, expect } from "../../fixtures/mainMenu";
 
-test.describe('Main menu mobile version',async () => {
+test.describe('Main menu',async () => {
     
     test('Expanding and collapsing the menu dropdown list',async ({mainMenuMobileVersion: mainMenuMobileVersion}) => {
         

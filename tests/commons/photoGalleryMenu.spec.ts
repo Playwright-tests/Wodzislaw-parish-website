@@ -1,8 +1,8 @@
-import { redirectionLinkAssertion } from "../common/assertions";
-import { URLs } from "../enums/URLs";
-import { Years } from "../enums/years";
-import { test } from "../fixtures/subpageMenu"
-import { getPhotoGalleryData } from "../loaders/loaders";
+import { redirectionLinkAssertion } from "../../common/assertions";
+import { URLs } from "../../enums/URLs";
+import { Years } from "../../enums/years";
+import { test } from "../../fixtures/subpageMenu"
+import { getPhotoGalleryData } from "../../loaders/loaders";
 
 test.use({ url: URLs.PHOTO_GALLERY });
 

@@ -1,6 +1,6 @@
-import { redirectionLinkAssertion } from "../common/assertions";
-import { test } from "../fixtures/mainMenu";
-import { getLinkTypes } from "../loaders/loaders";
+import { redirectionLinkAssertion } from "../../common/assertions";
+import { test } from "../../fixtures/mainMenu";
+import { getLinkTypes } from "../../loaders/loaders";
 
 const links = getLinkTypes('dropdownList');
 

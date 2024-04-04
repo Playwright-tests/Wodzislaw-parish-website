@@ -1,6 +1,6 @@
-import { searchEngineSteps } from "../common/steps";
-import { test, expect } from "../fixtures/searchEngine";
-import { getStringArray } from "../loaders/loaders";
+import { test, expect } from "../../fixtures/searchEngine";
+import { searchEngineSteps } from "../../common/steps";
+import { getStringArray } from "../../loaders/loaders";
 
 const correctPhrases = getStringArray('correct');
 const incorrectPhrases = getStringArray('incorrect');

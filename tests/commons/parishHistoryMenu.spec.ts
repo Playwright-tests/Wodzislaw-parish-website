@@ -1,7 +1,7 @@
-import { redirectionLinkAssertion } from "../common/assertions";
-import { URLs } from "../enums/URLs";
-import { test } from "../fixtures/subpageMenu";
-import { getLinkTypes } from "../loaders/loaders";
+import { redirectionLinkAssertion } from "../../common/assertions";
+import { URLs } from "../../enums/URLs";
+import { test } from "../../fixtures/subpageMenu";
+import { getLinkTypes } from "../../loaders/loaders";
 
 test.use({ url: URLs.PARISH_HISTORY });
 

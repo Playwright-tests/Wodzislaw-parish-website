@@ -4,3 +4,7 @@ node_modules/
 /playwright/.cache/
 allure-results/
 tests/viewport.spec.ts
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
