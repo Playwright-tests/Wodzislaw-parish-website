@@ -15,7 +15,7 @@ export class MainMenu extends BasePage {
 
     async clickLink(linkText: string) {
 
-        await this.page.getByRole('link', {name: linkText}).click();
+        await this.getPage().getByRole('link', {name: linkText}).click();
     }
 
     async getDropdownList() {
