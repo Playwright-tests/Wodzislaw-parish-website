@@ -10,6 +10,6 @@ export class Menu extends BasePage {
 
     async clickLink(linkText: string) {
 
-        await this.page.locator('#site-aside').getByRole('link', {name: linkText}).click();
+        await this.getPage().locator('#site-aside').getByRole('link', {name: linkText}).click();
     }
 }
