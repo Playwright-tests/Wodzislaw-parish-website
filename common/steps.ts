@@ -1,6 +1,6 @@
-import { test } from "@playwright/test";
 import { SearchEngine } from "../page-object/elements/searchEngine.";
 import { allure } from "allure-playwright";
+import { setAttachment } from "./allure";
 
 export async function searchEngineSteps(searchEngine: SearchEngine, phrase: any) {
     
@@ -10,6 +10,8 @@ export async function searchEngineSteps(searchEngine: SearchEngine, phrase: any)
                 
         await searchEngine.setPhrase(phrase);
     })
+
+    await setAttachment(phrase, searchEngine.getPage().locator(searchEngine.getSelector()));
 
     await allure.step('Click the search button',async () => {
         

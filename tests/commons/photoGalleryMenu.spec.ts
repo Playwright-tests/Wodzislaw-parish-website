@@ -5,7 +5,7 @@ import { URLs } from "../../enums/URLs";
 import { Years } from "../../enums/years";
 import { test } from "../../fixtures/subpageMenu"
 import { getPhotoGalleryData } from "../../loaders/loaders";
-import { configureAllureTest } from "../../common/allure";
+import { configureAllureTest, setAttachment } from "../../common/allure";
 
 test.use({ url: URLs.PHOTO_GALLERY });
 
@@ -23,6 +23,7 @@ test.describe('Photo gallery menu tests',async () => {
             await configureAllureTest('Clicking the "' + linkText + '" link', Severity.CRITICAL);
             await allure.parameter('link', linkText);
             await allure.parameter('expected page URL', expectedUrl);
+            await setAttachment(linkText, menu.getLinkLocator(linkText));
 
             await allure.step('Click the "' + linkText + '" link',async () => {
                

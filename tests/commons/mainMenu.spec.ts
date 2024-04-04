@@ -3,7 +3,7 @@ import { Severity } from "allure-js-commons";
 import { redirectionLinkAssertion } from "../../common/assertions";
 import { test } from "../../fixtures/mainMenu";
 import { getLinkTypes } from "../../loaders/loaders";
-import { configureAllureTest, setAllureParameters } from "../../common/allure";
+import { configureAllureTest, setAllureParameters, setAttachment } from "../../common/allure";
 
 const links = getLinkTypes('mainMenu');
 
@@ -15,6 +15,7 @@ test.describe('Main menu links',async () => {
             
             await configureAllureTest('Clicking the "' + link.link + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
+            await setAttachment(link.link, mainMenu.getLinkLocator(link.link));
 
             await allure.step('Click the "' + link.link + '" link',async () => {
                 

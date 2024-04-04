@@ -3,7 +3,7 @@ import { test } from "../../fixtures/mainMenu";
 import { allure } from "allure-playwright";
 import { Severity } from "allure-js-commons";
 import { getLinkTypes } from "../../loaders/loaders";
-import { configureAllureTest, setAllureParameters } from "../../common/allure";
+import { configureAllureTest, setAllureParameters, setAttachment } from "../../common/allure";
 
 const links = getLinkTypes('dropdownList');
 
@@ -18,12 +18,14 @@ test.describe('Main menu dropdown list',async () => {
 
             await allure.step('Hover over the "Informacje stałe"',async () => {
                 
-                await (await mainMenu.getDropdownList()).hoverParent();
+                await mainMenu.getDropdownList().hoverParent();
             })
+
+            await setAttachment(link.link, mainMenu.getDropdownList().getLinkLocator(link.link));
 
             await allure.step('Click the "' + link.link + '" link',async () => {
                 
-                await (await mainMenu.getDropdownList()).clickLink(link.link);
+                await mainMenu.getDropdownList().clickLink(link.link);
             })
 
             await redirectionLinkAssertion(page, link.pageUrl, link.tabName);

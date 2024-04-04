@@ -4,7 +4,7 @@ import { redirectionLinkAssertion } from "../../common/assertions";
 import { URLs } from "../../enums/URLs";
 import { test } from "../../fixtures/subpageMenu";
 import { getLinkTypes } from "../../loaders/loaders";
-import { configureAllureTest, setAllureParameters } from "../../common/allure";
+import { configureAllureTest, setAllureParameters, setAttachment } from "../../common/allure";
 
 test.use({ url: URLs.PARISH_HISTORY });
 
@@ -18,6 +18,7 @@ test.describe('Parish history menu tests',async () => {
             
             await configureAllureTest('Clicking the "' + link.link + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
+            await setAttachment(link.link, menu.getLinkLocator(link.link));
 
             await allure.step('Click the "' + link.link + '" link',async () => {
                 
