@@ -11,14 +11,14 @@ test.describe('Priests menu links',async () => {
     
     for(const link of links) {
 
-        test('Clicking the "' + link.link + '" link',async ({page, menu}) => {
+        test('Clicking the "' + link.link + '" link',async ({menu}) => {
             
             await test.step('Click the "' + link.link + '" link',async () => {
                 
                 await menu.clickLink(link.link);
             })
 
-            await redirectionLinkAssertion(page, link.pageUrl, link.tabName);
+            await redirectionLinkAssertion(menu.getPage(), link.pageUrl, link.tabName);
         })
     }
 })

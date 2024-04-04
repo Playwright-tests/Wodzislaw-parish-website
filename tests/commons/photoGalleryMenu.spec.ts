@@ -15,7 +15,7 @@ test.describe('Photo gallery menu tests',async () => {
         const linkText = linkData.partialLinkText + i.toString();
         const expectedUrl = linkData.partialUrl + i.toString() + '/'; 
 
-        test('Clicking the "' + linkText + '" link',async ({page, menu}) => {
+        test('Clicking the "' + linkText + '" link',async ({menu}) => {
             
             await test.step('Click the "' + linkText + '" link',async () => {
                
@@ -23,7 +23,7 @@ test.describe('Photo gallery menu tests',async () => {
 
             } )
 
-            await redirectionLinkAssertion(page, expectedUrl, linkText);
+            await redirectionLinkAssertion(menu.getPage(), expectedUrl, linkText);
         })
     }
 
