@@ -1,13 +1,13 @@
-import { test, expect } from "../fixtures/subDropdownList";
-import { expect as VS_expect } from "../custom-expect/toHaveVisibleSelector";
-import { expect as HD_expect } from "../custom-expect/toHaveHiddenSelector";
-import { getLinkTypes } from "../loaders/loaders";
+import { test, expect } from "../../fixtures/subDropdownList";
+import { expect as VS_expect } from "../../custom-expect/toHaveVisibleSelector";
+import { expect as HD_expect } from "../../custom-expect/toHaveHiddenSelector";
+import { getLinkTypes } from "../../loaders/loaders";
 
 const links = getLinkTypes('dropdownList');
 
-test.describe('Sub dropdown list menu',async () => {
+test.describe('Sub dropdown list',async () => {
     
-    test('Expanding and collapsing the dsub dropdown list menu',async ({subDropdownList}) => {
+    test('Expanding and collapsing the sub dropdown list',async ({subDropdownList}) => {
         
         await test.step('Touch the arrow',async () => {
             await subDropdownList.touchArrow();
