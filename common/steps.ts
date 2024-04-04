@@ -1,14 +1,17 @@
 import { test } from "@playwright/test";
 import { SearchEngine } from "../page-object/elements/searchEngine.";
+import { allure } from "allure-playwright";
 
-export async function searchEngineSteps(searchEngine: SearchEngine, data: any) {
+export async function searchEngineSteps(searchEngine: SearchEngine, phrase: any) {
     
-    await test.step('Type "' + data +'" as the correct phrase',async () => {
+    await allure.parameter('phrase', phrase)
+
+    await allure.step('Enter the "' + phrase +'"',async () => {
                 
-        await searchEngine.setPhrase(data);
+        await searchEngine.setPhrase(phrase);
     })
 
-    await test.step('Click the search button',async () => {
+    await allure.step('Click the search button',async () => {
         
         await searchEngine.clickButton();
     })

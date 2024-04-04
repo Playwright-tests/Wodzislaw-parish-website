@@ -1,3 +1,4 @@
+import { allure } from "allure-playwright";
 import { redirectionLinkAssertion } from "../../common/assertions";
 import { URLs } from "../../enums/URLs";
 import { Years } from "../../enums/years";
@@ -16,8 +17,11 @@ test.describe('Photo gallery menu tests',async () => {
         const expectedUrl = linkData.partialUrl + i.toString() + '/'; 
 
         test('Clicking the "' + linkText + '" link',async ({menu}) => {
-            
-            await test.step('Click the "' + linkText + '" link',async () => {
+           
+            await allure.parameter('link', linkText);
+            await allure.parameter('expected page URL', expectedUrl);
+
+            await allure.step('Click the "' + linkText + '" link',async () => {
                
                 await menu.clickLink(linkText);
 

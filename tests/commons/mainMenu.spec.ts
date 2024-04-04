@@ -1,3 +1,4 @@
+import { allure } from "allure-playwright";
 import { redirectionLinkAssertion } from "../../common/assertions";
 import { test } from "../../fixtures/mainMenu";
 import { getLinkTypes } from "../../loaders/loaders";
@@ -10,7 +11,11 @@ test.describe('Main menu links',async () => {
 
         test('Clicking the "' + link.link + '" link',async ({mainMenu}) => {
             
-            await test.step('Click the "' + link.link + '" link',async () => {
+            await allure.parameter('link', link.link);
+            await allure.parameter('expected page URL', link.pageUrl);
+            await allure.parameter('expected tab name', link.tabName);
+
+            await allure.step('Click the "' + link.link + '" link',async () => {
                 
                 await mainMenu.clickLink(link.link);
             })

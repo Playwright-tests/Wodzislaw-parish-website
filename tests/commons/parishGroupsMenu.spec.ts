@@ -1,3 +1,4 @@
+import { allure } from "allure-playwright";
 import { redirectionLinkAssertion } from "../../common/assertions";
 import { URLs } from "../../enums/URLs";
 import { test } from "../../fixtures/subpageMenu";
@@ -12,8 +13,12 @@ test.describe('Parish groups menu tests',async () => {
     for(const link of links) {
 
         test('Clicking the "' + link.link + '" link',async ({menu}) => {
-            
-            await test.step('Click the "' + link.link + '" link',async () => {
+
+            await allure.parameter('link', link.link);
+            await allure.parameter('expected page URL', link.pageUrl);
+            await allure.parameter('expected tab name', link.tabName);
+
+            await allure.step('Click the "' + link.link + '" link',async () => {
                 
                 await menu.clickLink(link.link);
             })

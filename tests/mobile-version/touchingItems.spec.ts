@@ -1,3 +1,4 @@
+import { allure } from "allure-playwright";
 import { test, expect } from "../../fixtures/mainMenu";
 import { getLinkTypes } from "../../loaders/loaders";
 
@@ -11,7 +12,11 @@ test.describe('The main menu links',async () => {
 
         test('Touching the "' + link.link + '" menu item',async ({mainMenuMobileVersion}) => {
             
-            await test.step('Touch the "' + link + '" menu item',async () => {
+            await allure.parameter('link', link.link);
+            await allure.parameter('expected page URL', link.pageUrl);
+            await allure.parameter('expected tab name', link.tabName);
+
+            await allure.step('Touch the "' + link + '" menu item',async () => {
                 await mainMenuMobileVersion.touchItem(link.link);
             })
 
