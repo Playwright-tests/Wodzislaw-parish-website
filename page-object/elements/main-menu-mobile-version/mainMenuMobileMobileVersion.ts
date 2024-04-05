@@ -14,18 +14,23 @@ export class MainMenuMobileVersion extends BasePage {
         this.dropdownElement = page.getByRole('menu');
     }
 
-    async touchTriggerElement() {
+    async touchTriggerElement(): Promise<void> {
 
         await this.triggerElement.click();
     }
 
-    getDropdownElement() {
+    getDropdownElement(): Locator {
 
         return this.dropdownElement;
     }
 
-    async touchItem(itemName: string) {
+    async touchItem(itemName: string): Promise<void> {
 
         await this.getPage().getByRole('menuitem', {name: itemName}).click();
+    }
+
+    getItem(itemName: string): Locator {
+
+        return this.getPage().getByRole('menuitem', {name: itemName});
     }
 }

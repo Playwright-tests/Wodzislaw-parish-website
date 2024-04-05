@@ -16,23 +16,28 @@ export class Submenu extends BasePage {
         this.submenuSelector = '.sub-menu';
     }
 
-    async touchTriggerElement() {
+    async touchTriggerElement(): Promise<void> {
 
         await this.triggerElement.click();
     }
 
-    async touchArrow() {
+    async touchArrow(): Promise<void> {
 
         await this.arrow.click();
     }
 
-    getSubmenuSelector() {
+    getSubmenuSelector(): string {
 
         return this.submenuSelector;
     }
 
-    async touchItem(itemName: string) {
+    async touchItem(itemName: string): Promise<void> {
 
         await this.getPage().getByRole('menuitem', {name: itemName}).click();
+    }
+
+    getItem(itemName: string) {
+
+        return this.getPage().getByRole('menuitem', {name: itemName});
     }
 }

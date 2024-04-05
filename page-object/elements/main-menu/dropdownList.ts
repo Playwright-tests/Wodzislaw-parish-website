@@ -9,7 +9,7 @@ export class DropdownList extends BasePage {
 
         super(page);
 
-        this.parent = page.getByRole('link', {name: 'Informacje stałe', exact: false});
+        this.parent = page.locator('#menu-main-menu').getByText('Informacje stałe Porządek');
     }
 
     async hoverParent(): Promise<void> {
@@ -19,11 +19,11 @@ export class DropdownList extends BasePage {
 
     async clickLink(linkText: string): Promise<void> {
 
-        await this.getPage().getByRole('link', {name: linkText}).click();
+        await this.getPage().locator('#menu-main-menu').getByRole('link', {name: linkText}).click();
     }
 
     getLinkLocator(linkText: string): Locator {
         
-        return this.getPage().getByRole('link', {name: linkText});
+        return this.getPage().locator('#menu-main-menu').getByRole('link', {name: linkText});
     }
 }
