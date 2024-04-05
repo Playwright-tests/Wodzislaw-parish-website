@@ -5,7 +5,7 @@ import { Locator, Page } from "@playwright/test";
 
 export async function setAllureParameters(link: Link): Promise<void> {
     
-    await allure.parameter('Link', link.link);
+    await allure.parameter('Link', link.name);
     await allure.parameter('Expected page URL', link.pageUrl);
     await allure.parameter('Expected tab name', link.tabName);
 }
