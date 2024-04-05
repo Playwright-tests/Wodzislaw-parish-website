@@ -11,15 +11,15 @@ test.describe('Main menu links',async () => {
     
     for(const link of links) {
 
-        test('Clicking the "' + link.link + '" link',async ({mainMenu}) => {
+        test('Clicking the "' + link.name + '" link',async ({mainMenu}) => {
             
-            await configureAllureTest('Clicking the "' + link.link + '" link', Severity.CRITICAL);
+            await configureAllureTest('Clicking the "' + link.name + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
-            await setAttachment(link.link, mainMenu.getLinkLocator(link.link));
+            await setAttachment(link.name, mainMenu.getLinkLocator(link.name));
 
-            await allure.step('Click the "' + link.link + '" link',async () => {
+            await allure.step('Click the "' + link.name + '" link',async () => {
                 
-                await mainMenu.clickLink(link.link);
+                await mainMenu.clickLink(link.name);
             })
 
             await redirectionLinkAssertion(mainMenu.getPage(), link.pageUrl, link.tabName);

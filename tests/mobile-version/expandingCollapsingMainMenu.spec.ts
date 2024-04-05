@@ -1,11 +1,11 @@
 import { allure } from "allure-playwright";
 import { Severity } from "allure-js-commons";
 import { test, expect } from "../../fixtures/mainMenu";
-import { configureAllureTest } from "../../common/allure";
+import { configureAllureTest, setAttachment, setAttachmentFullScreenshoot } from "../../common/allure";
 
 test.describe('Main menu',async () => {
     
-    test('Expanding and collapsing the menu dropdown list',async ({mainMenuMobileVersion: mainMenuMobileVersion}) => {
+    test('Expanding and collapsing the menu dropdown list',async ({mainMenuMobileVersion}) => {
         
         await configureAllureTest('Expanding and collapsing the menu dropdown list', Severity.CRITICAL);
 
@@ -13,12 +13,14 @@ test.describe('Main menu',async () => {
             await mainMenuMobileVersion.touchTriggerElement();
         })
 
-        await expect(mainMenuMobileVersion.getDropdownElement()).toBeVisible();
+        await expect.soft(mainMenuMobileVersion.getDropdownElement()).toBeVisible();
+        await setAttachmentFullScreenshoot('expanded', mainMenuMobileVersion.getPage());
 
         await allure.step('Touch the trigger element again',async () => {
             await mainMenuMobileVersion.touchTriggerElement();
         })
 
-        await expect(mainMenuMobileVersion.getDropdownElement()).not.toBeVisible();
+        await expect.soft(mainMenuMobileVersion.getDropdownElement()).not.toBeVisible();
+        await setAttachmentFullScreenshoot('collapsed', mainMenuMobileVersion.getPage());
     })
 })

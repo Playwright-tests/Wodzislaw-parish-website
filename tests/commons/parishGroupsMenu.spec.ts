@@ -14,15 +14,15 @@ test.describe('Parish groups menu tests',async () => {
     
     for(const link of links) {
 
-        test('Clicking the "' + link.link + '" link',async ({menu}) => {
+        test('Clicking the "' + link.name + '" link',async ({menu}) => {
 
-            await configureAllureTest('Clicking the "' + link.link + '" link', Severity.CRITICAL);
+            await configureAllureTest('Clicking the "' + link.name + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
-            await setAttachment(link.link, menu.getLinkLocator(link.link));
+            await setAttachment(link.name, menu.getLinkLocator(link.name));
 
-            await allure.step('Click the "' + link.link + '" link',async () => {
+            await allure.step('Click the "' + link.name + '" link',async () => {
                 
-                await menu.clickLink(link.link);
+                await menu.clickLink(link.name);
             })
 
             await redirectionLinkAssertion(menu.getPage(), link.pageUrl, link.tabName);

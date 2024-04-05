@@ -15,7 +15,7 @@ test.describe('Sub dropdown list',async () => {
         await configureAllureTest('Expanding and collapsing the "INFORMACJE STAŁE" dropdown list', Severity.CRITICAL)
 
         await allure.step('Touch the arrow',async () => {
-            //await subDropdownList.touchArrow();
+            await subDropdownList.touchArrow();
         })
 
         await VS_expect.soft(subDropdownList.getPage()).toHaveVisibleSelector(subDropdownList.getSubmenuSelector());
@@ -31,14 +31,14 @@ test.describe('Sub dropdown list',async () => {
 
     for(const link of links) {
 
-        test('Touching the "' + link.link + '" menu item',async ({expanded}) => {
+        test('Touching the "' + link.name + '" menu item',async ({expanded}) => {
             
-            await configureAllureTest('Touching the "' + link.link + '" link', Severity.CRITICAL);
+            await configureAllureTest('Touching the "' + link.name + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
-            await setAttachment(link.link, expanded.getItem(link.link));
+            await setAttachment(link.name, expanded.getItem(link.name));
 
-            await allure.step('Touch the "' + link.link + '" item',async () => {
-                await expanded.touchItem(link.link);
+            await allure.step('Touch the "' + link.name + '" item',async () => {
+                await expanded.touchItem(link.name);
             })
 
             await expect(expanded.getPage()).toHaveURL(link.pageUrl);
