@@ -1,195 +1,200 @@
 {
     "mainMenu": [
         {
-            "link": "Strona główna",
+            "name": "Strona główna",
             "pageUrl": "https://wnmp.pl/",
             "tabName": "PARAFIA WNIEBOWZIĘCIA NAJŚWIĘTSZEJ MARYI PANNY W WODZISŁAWIU ŚLĄSKIM"
         },
         {
-            "link": "Ogłoszenia",
+            "name": "Ogłoszenia",
             "pageUrl": "https://wnmp.pl/ogloszenia/",
             "tabName": "Ogłoszenia"
         },
         {
-            "link": "Intencje",
+            "name": "Intencje",
             "pageUrl": "https://wnmp.pl/intencje/",
             "tabName": "Intencje"
         },
         {
-            "link": "Duszpasterze",
+            "name": "Duszpasterze",
             "pageUrl": "https://wnmp.pl/duszpasterze/obecni-duszpasterze/",
             "tabName": "Obecni duszpasterze"
         },
         {
-            "link": "Grupy parafialne",
+            "name": "Grupy parafialne",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/",
             "tabName": "Grupy parafialne"
         },
         {
-            "link": "Historia parafii",
+            "name": "Historia parafii",
             "pageUrl": "https://wnmp.pl/historia-parafii/z-kart-historii/",
             "tabName": "Z kart historii"
         },
         {
-            "link": "Galeria zdjęć",
+            "name": "Galeria zdjęć",
             "pageUrl": "https://wnmp.pl/media/",
             "tabName": "Galeria zdjęć"
         },
         {
-            "link": "Kontakt",
+            "name": "Kontakt",
             "pageUrl": "https://wnmp.pl/kontakt/",
             "tabName": "Kontakt"
         }
     ],
     "dropdownList": [
         {
-            "link": "Porządek Mszy św. i nabożeństw",
+            "name": "Porządek Mszy św. i nabożeństw",
             "pageUrl": "https://wnmp.pl/informacje-stale/porzadek-mszy-sw-i-nabozenstw/",
             "tabName": "Porządek Mszy św. i nabożeństw"
         },
         {
-            "link": "Sakramenty – zasady udzielania, terminy",
+            "name": "Sakramenty – zasady udzielania, terminy",
             "pageUrl": "https://wnmp.pl/informacje-stale/sakramenty-zasady-udzielania-terminy/",
             "tabName": "Sakramenty – zasady udzielania, terminy"
         },
         {
-            "link": "Odwiedziny chorych i starszych wiekiem parafian",
+            "name": "Odwiedziny chorych i starszych wiekiem parafian",
             "pageUrl": "https://wnmp.pl/informacje-stale/odwiedziny-chorych-i-starszych-wiekiem-parafian/",
             "tabName": "Odwiedziny chorych i starszych wiekiem parafian"
+        },
+        {
+            "name": "Regulamin cmentarza",
+            "pageUrl": "https://wnmp.pl/informacje-stale/regulamin-cmentarza/",
+            "tabName": "Regulamin cmentarza"
         }
     ],
     "parishGroups": [
         {
-            "link": "Bractwo Eucharystyczne",
+            "name": "Bractwo Eucharystyczne",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/bractwo-eucharystyczne/",
             "tabName": "Bractwo Eucharystyczne"
         },
         {
-            "link": "Bractwo Pocieszenia NMP",
+            "name": "Bractwo Pocieszenia NMP",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/bractwo-pocieszenia-nmp/",
             "tabName": "Bractwo Pocieszenia NMP"
         },
         {
-            "link": "Bractwo Szkaplerza Świętego",
+            "name": "Bractwo Szkaplerza Świętego",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/bractwo-szkaplerza-swietego/",
             "tabName": "Bractwo Szkaplerza Świętego"
         },
         {
-            "link": "Bractwo Żywego Różańca",
+            "name": "Bractwo Żywego Różańca",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/bractwo-zywego-rozanca/",
             "tabName": "Bractwo Żywego Różańca"
         },
         {
-            "link": "Chór Parafialny \"Assumptio\"",
+            "name": "Chór Parafialny \"Assumptio\"",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/chor-parafialny-assumptio/",
             "tabName": "Chór Parafialny “Assumptio”"
         },
         {
-            "link": "Duszpasterstwo Osób Niesłyszących",
+            "name": "Duszpasterstwo Osób Niesłyszących",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/duszpasterstwo-osob-nieslyszacych/",
             "tabName": "Duszpasterstwo Osób Niesłyszących"
         },
         {
-            "link": "Franciszkański Zakon Świeckich",
+            "name": "Franciszkański Zakon Świeckich",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/franciszkanski-zakon-swieckich/",
             "tabName": "Franciszkański Zakon Świeckich"
         },
         {
-            "link": "Grupa dorosłych lektorów",
+            "name": "Grupa dorosłych lektorów",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/grupa-doroslych-lektorow/",
             "tabName": "Grupa dorosłych lektorów"
         },
         {
-            "link": "Grupa Modlitwy św. Ojca Pio",
+            "name": "Grupa Modlitwy św. Ojca Pio",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/grupa-modlitwy-sw-ojca-pio/",
             "tabName": "Grupa Modlitwy św. Ojca Pio"
         },
         {
-            "link": "Kręgi Domowego Kościoła",
+            "name": "Kręgi Domowego Kościoła",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/kregi-domowego-kosciola/",
             "tabName": "Kręgi Domowego Kościoła"
         },
         {
-            "link": "Legion Maryi",
+            "name": "Legion Maryi",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/legion-maryi/",
             "tabName": "Legion Maryi"
         },
         {
-            "link": "Mężczyźni św. Józefa",
+            "name": "Mężczyźni św. Józefa",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/mezczyzni-sw-jozefa/",
             "tabName": "Mężczyźni św. Józefa"
         },
         {
-            "link": "Ministranci",
+            "name": "Ministranci",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/ministranci/",
             "tabName": "Ministranci"
         },
         {
-            "link": "Nadzwyczajni Szafarze Komunii Świętej",
+            "name": "Nadzwyczajni Szafarze Komunii Świętej",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/nadzwyczajni-szafarze-komunii-swietej/",
             "tabName": "Nadzwyczajni Szafarze Komunii Świętej"
         },
         {
-            "link": "Redakcja gazetki \"Magnificat\"",
+            "name": "Redakcja gazetki \"Magnificat\"",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/redakcja-gazetki-magnificat/",
             "tabName": "Redakcja gazetki “Magnificat”"
         },
         {
-            "link": "Rodzina Radia Maryja",
+            "name": "Rodzina Radia Maryja",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/rodzina-radia-maryja/",
             "tabName": "Rodzina Radia Maryja"
         },
         {
-            "link": "Ruch Światło - Życie",
+            "name": "Ruch Światło - Życie",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/ruch-swiatlo-zycie/",
             "tabName": "Ruch Światło – Życie"
         },
         {
-            "link": "Schola Dziecięca",
+            "name": "Schola Dziecięca",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/schola-dziecieca/",
             "tabName": "Schola Dziecięca"
         },
         {
-            "link": "Pola działalności duszpasterskiej",
+            "name": "Pola działalności duszpasterskiej",
             "pageUrl": "https://wnmp.pl/grupy-parafialne/pola-dzialalnosci-duszpasterskiej/",
             "tabName": "Pola działalności duszpasterskiej"
         }
     ],
     "parishHistory": [
         {
-            "link": "Z kart historii",
+            "name": "Z kart historii",
             "pageUrl": "https://wnmp.pl/historia-parafii/z-kart-historii/",
             "tabName": "Z kart historii"
         },
         {
-            "link": "Wnętrze kościoła - ołtarz",
+            "name": "Wnętrze kościoła - ołtarz",
             "pageUrl": "https://wnmp.pl/historia-parafii/wnetrze-kosciola-oltarz/",
             "tabName": "Wnętrze kościoła – ołtarz"
         }
     ],
     "priests": [
         {
-            "link": "Obecni duszpasterze",
+            "name": "Obecni duszpasterze",
             "pageUrl": "https://wnmp.pl/duszpasterze/obecni-duszpasterze/",
             "tabName": "Obecni duszpasterze"
         },
         {
-            "link": "Poprzedni proboszczowie",
+            "name": "Poprzedni proboszczowie",
             "pageUrl": "https://wnmp.pl/duszpasterze/poprzedni-proboszczowie-2/",
             "tabName": "Poprzedni proboszczowie"
         },
         {
-            "link": "Kapłani pochodzący",
+            "name": "Kapłani pochodzący",
             "pageUrl": "https://wnmp.pl/duszpasterze/kaplani-pochodzacy-2/",
             "tabName": "Kapłani pochodzący"
         },
         {
-            "link": "Siostry Boromeuszki",
+            "name": "Siostry Boromeuszki",
             "pageUrl": "https://wnmp.pl/duszpasterze/siostry-boromeuszki/",
             "tabName": "Siostry Boromeuszki"
         },
         {
-            "link": "Kapłani od 1980 r.",
+            "name": "Kapłani od 1980 r.",
             "pageUrl": "https://wnmp.pl/duszpasterze/kaplani-od-1980-r/",
             "tabName": "Kapłani od 1980 r."
         }
