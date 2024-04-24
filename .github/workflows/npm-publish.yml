@@ -1,37 +1,24 @@
-name: Node.js Package
-
+name: Playwright Tests
 on:
-  release:
-    types: [created]
-
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
 jobs:
-  build:
+  playwright:
+    name: 'Playwright Tests'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.43.0-jammy
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
-      - name: Install Playwright
-        run: npm i -D @playwright/test
-      - name: Install Chrome browser
-        run: npx playwright install chrome
-      - name: Run tests
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run your tests
         run: npx playwright test
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          HOME: /root
+
