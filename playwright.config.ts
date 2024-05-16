@@ -20,7 +20,7 @@ export default defineConfig({
   retries: 2,
   //retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 2 : undefined,
+  workers: process.env.CI ? 4 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ["line"], 
@@ -60,7 +60,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
-    headless: false,
+    headless: true,
     
     locale: 'pl-PL',
 
@@ -72,11 +72,13 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: /desktop.*\.spec\.ts/,
     },
 
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      testMatch: /desktop.*\.spec\.ts/,
     },
 
     /*{
@@ -88,6 +90,7 @@ export default defineConfig({
      {
         name: 'Mobile Chrome',
         use: { ...devices['Pixel 5'] },
+        testMatch: /mobile.*\.spec\.ts/,
      },
      //{
       // name: 'Mobile Safari',
@@ -98,10 +101,12 @@ export default defineConfig({
      {
        name: 'Microsoft Edge',
        use: { ...devices['Desktop Edge'], channel: 'msedge' },
+       testMatch: /desktop.*\.spec\.ts/,
      },
      {
        name: 'Google Chrome',
        use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+       testMatch: /desktop.*\.spec\.ts/,
      },
   ],
 
