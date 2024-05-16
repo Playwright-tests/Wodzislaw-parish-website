@@ -14,6 +14,10 @@ test.describe('The main menu items',async () => {
 
         test('Touching the "' + link.name + '" menu item',async ({mainMenuMobileVersion}) => {
             
+            await allure.tag('Main menu');
+            await allure.tag('Dropdown list');
+            await allure.tag('Items');
+            await allure.tag('Links');
             await configureAllureTest('Touching the "' + link.name + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
             await setAttachment(link.name, mainMenuMobileVersion.getItem(link.name));

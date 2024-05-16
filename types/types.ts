@@ -1,6 +1,6 @@
 export type Link = {
 
-    link: string,
+    name: string,
     pageUrl: string,
     tabName: string
 }
