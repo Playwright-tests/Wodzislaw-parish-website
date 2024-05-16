@@ -7,6 +7,8 @@ test.describe('Main menu',async () => {
     
     test('Expanding and collapsing the menu dropdown list',async ({mainMenuMobileVersion}) => {
         
+        await allure.tag('Main menu');
+        await allure.tag('Dropdown list');
         await configureAllureTest('Expanding and collapsing the menu dropdown list', Severity.CRITICAL);
 
         await allure.step('Touch the trigger element',async () => {

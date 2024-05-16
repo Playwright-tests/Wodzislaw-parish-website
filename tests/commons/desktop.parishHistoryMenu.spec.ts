@@ -16,6 +16,8 @@ test.describe('Parish history menu tests',async () => {
 
         test('Clicking the "' + link.name + '" link',async ({menu}) => {
             
+            await allure.tag('Menu');
+            await allure.tag('Links');
             await configureAllureTest('Clicking the "' + link.name + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
             await setAttachment(link.name, menu.getLinkLocator(link.name));

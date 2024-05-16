@@ -14,6 +14,8 @@ test.describe('Correct phrase',async () => {
 
         test('Typing the "' + phrase + '" as the correct phrase',async ({searchEngine, searchResultsList}) => {
 
+            await allure.tag('Seach engine');
+            await allure.tag('Phrase');
             await configureAllureTest('Typing the "' + phrase + '" link', Severity.CRITICAL);
             await allure.parameter('Phrase', phrase);
             await searchEngineSteps(searchEngine, phrase);
@@ -31,6 +33,8 @@ test.describe('Incorrect phrase',async () => {
 
         test('Typing the "' + phrase + '" as the incorrect phrase',async ({searchEngine, searchResultsList}) => {
 
+            await allure.tag('Seach engine');
+            await allure.tag('Phrase');
             await configureAllureTest('Typing the "' + phrase + '" link', Severity.NORMAL);
             await allure.parameter('Phrase', phrase);
             await searchEngineSteps(searchEngine, phrase);

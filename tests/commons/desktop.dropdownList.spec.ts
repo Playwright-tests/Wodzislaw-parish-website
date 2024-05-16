@@ -16,6 +16,9 @@ test.describe('Main menu dropdown list',async () => {
             await configureAllureTest('Clicking the "' + link.name + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
 
+            await allure.tag('Dropdown list');
+            await allure.tag('Links');
+
             await allure.step('Hover over the "Informacje stałe"',async () => {
                 
                 await mainMenu.getDropdownList().hoverParent();

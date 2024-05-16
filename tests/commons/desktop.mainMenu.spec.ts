@@ -13,6 +13,8 @@ test.describe('Main menu links',async () => {
 
         test('Clicking the "' + link.name + '" link',async ({mainMenu}) => {
             
+            await allure.tag('Main menu');
+            await allure.tag('Links')
             await configureAllureTest('Clicking the "' + link.name + '" link', Severity.CRITICAL);
             await setAllureParameters(link);
             await setAttachment(link.name, mainMenu.getLinkLocator(link.name));

@@ -20,6 +20,8 @@ test.describe('Photo gallery menu tests',async () => {
 
         test('Clicking the "' + linkText + '" link',async ({menu}) => {
            
+            await allure.tag('Menu');
+            await allure.tag('Links');
             await configureAllureTest('Clicking the "' + linkText + '" link', Severity.CRITICAL);
             await allure.parameter('link', linkText);
             await allure.parameter('expected page URL', expectedUrl);

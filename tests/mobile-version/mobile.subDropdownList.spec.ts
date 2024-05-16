@@ -12,6 +12,8 @@ test.describe('Sub dropdown list',async () => {
     
     test('Expanding and collapsing the "INFORMACJE STAŁE" dropdown list',async ({subDropdownList}) => {
         
+        await allure.tag('Main menu');
+        await allure.tag('Dropdown list');
         await configureAllureTest('Expanding and collapsing the "INFORMACJE STAŁE" dropdown list', Severity.CRITICAL)
 
         await allure.step('Touch the arrow',async () => {
