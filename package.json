@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "install-playwright": "npm install -g playwright && npx playwright install chromium",
-    "test": "npx playwright test -g 'Main menu links'"
+    "test": "npx playwright test -g 'Main menu links'",
+    "allure:generate": "allure generate allure-results --clean -o allure-report"
+
   },
   "keywords": [],
   "author": "",
